@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">Data Insights</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="text-white hover:text-blue-200">Home</a>
+                <a href="#" class="text-white hover:text-blue-200">Dashboard</a>
+                <a href="#" class="text-white hover:text-blue-200">About</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-2 px-2 pb-3 bg-indigo-600 rounded-md">
+            <a href="#" class="block text-white hover:bg-indigo-700 px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="#" class="block text-white hover:bg-indigo-700 px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+            <a href="#" class="block text-white hover:bg-indigo-700 px-3 py-2 rounded-md text-base font-medium">About</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 p-4">
+        <section class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Our Data Insights Platform</h1>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                This platform processes raw data from Excel files, transforms it, and generates insightful JSON outputs.
+                Leveraging Python with Pandas, we ensure robust and efficient data handling.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Our continuous integration pipeline automates quality checks, execution, and deployment of results to GitHub Pages.
+            </p>
+            <div class="mt-6">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">Learn More</a>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Automated Data Processing</h2>
+                <p class="text-gray-600">
+                    Our `execute.py` script automatically converts `data.xlsx` to `data.csv` and processes it further.
+                </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">CI/CD with GitHub Actions</h2>
+                <p class="text-gray-600">
+                    A robust CI workflow lints code, runs the processing script, and publishes results.
+                </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Results via GitHub Pages</h2>
+                <p class="text-gray-600">
+                    The final `result.json` output is automatically deployed and accessible through GitHub Pages.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Data Insights. All rights reserved.</p>
+            <p class="mt-2">Built with <a href="https://tailwindcss.com/" class="text-blue-400 hover:underline">Tailwind CSS</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
